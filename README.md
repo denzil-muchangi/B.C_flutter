@@ -1,17 +1,48 @@
-# basic_counter
+# Adaptive Counter Pro
 
-A new Flutter project.
+A professional, feature-rich counter application built with Flutter. This project demonstrates a **Feature-First Architecture** and **Adaptive UI** principles, providing a native experience across Mobile, Tablet, and Desktop platforms.
 
-## Getting Started
+## 🚀 Features
 
-This project is a starting point for a Flutter application.
+- **Adaptive Layouts**: Seamlessly switches between Mobile (Bottom Navigation) and Desktop/Tablet (Navigation Rail) views.
+- **Unique Visuals**: Stylized counter display with animated transitions and circular progress indicators.
+- **History Tracking**: Automatically logs every change with timestamps and visual indicators.
+- **Advanced Settings**:
+  - Customizable Step Size (1, 5, 10, 50, 100).
+  - Working Dark Mode toggle.
+- **Material 3**: Fully compliant with modern Material Design guidelines, including dynamic color seeding.
 
-A few resources to get you started if this is your first Flutter project:
+## 🏗️ Architecture
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+The project follows a **Feature-First (Folder-by-Feature)** architecture, ensuring high maintainability and scalability.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```text
+lib/
+├── app/                       # Global App Logic & Design System
+├── features/                  # Independent Business Features
+│   ├── counter/               # Main Counter logic & widgets
+│   ├── history/               # History tracking & logs
+│   └── settings/              # App configuration & preferences
+└── main.dart                  # Clean entry point
+```
+
+## 🛠️ Getting Started
+
+1. **Clone the repository**
+2. **Install dependencies**:
+   ```bash
+   flutter pub get
+   ```
+3. **Run the application**:
+   ```bash
+   flutter run
+   ```
+
+## 📱 Platform Support
+
+- **Android / iOS**: Mobile-optimized touch interface.
+- **Windows / macOS / Linux**: Desktop-native Navigation Rail and keyboard-friendly layouts.
+- **Web**: Fully responsive web implementation.
+
+---
+Built with ❤️ using Flutter & Material 3.
