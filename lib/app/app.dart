@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../counter/view/counter_view.dart';
+import 'theme/theme.dart';
 
 class CounterApp extends StatelessWidget {
   const CounterApp({super.key});
@@ -9,20 +10,8 @@ class CounterApp extends StatelessWidget {
     return MaterialApp(
       title: 'Adaptive Counter',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blueAccent,
-          brightness: Brightness.light,
-        ),
-      ),
-      darkTheme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.blueAccent,
-          brightness: Brightness.dark,
-        ),
-      ),
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
       home: const CounterView(),
     );
   }
