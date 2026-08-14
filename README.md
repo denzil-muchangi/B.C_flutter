@@ -1,4 +1,4 @@
-# Adaptive Counter Pro
+# Basic Counter
 
 A professional, feature-rich counter application built with Flutter. This project demonstrates a **Feature-First Architecture** and **Adaptive UI** principles, providing a native experience across Mobile, Tablet, and Desktop platforms.
 
