@@ -24,20 +24,39 @@ A professional, feature-rich counter application built with Flutter. This projec
 
 ## 📸 Visual Showcase
 
-### Mobile Experience
-| Counter (Light) | History (Dark) | Settings (Light) |
-| :---: | :---: | :---: |
-| ![Counter Mobile Light](screenshots/counter_mobile_light_theme.png) | ![History Mobile Dark](screenshots/history_mobile_dark_theme.png) | ![Settings Mobile Light](screenshots/settings_mobile_light_theme.png) |
+### 🔢 Counter Screen
+Experience the main interaction point across every orientation and theme.
 
-### Tablet & Wide Screens
-| Counter (Landscape Dark) | Settings (Portrait Light) |
-| :---: | :---: |
-| ![Counter Tablet Landscape Dark](screenshots/counter_tablet_landscape_dark_theme.png) | ![Settings Tablet Portrait Light](screenshots/settings_tablet_portrait_light_theme.png) |
+| Orientation | Light Theme | Dark Theme |
+| :--- | :---: | :---: |
+| **Mobile** | ![Mobile Light](screenshots/counter_mobile_light_theme.png) | ![Mobile Dark](screenshots/counter_mobile_dark_theme.png) |
+| **Mobile Landscape** | ![Mobile Landscape Light](screenshots/counter_mobile_landscape_light_theme.png) | ![Mobile Landscape Dark](screenshots/counter_mobile_landscape_dark_theme.png) |
+| **Tablet Portrait** | ![Tablet Portrait Light](screenshots/counter_tablet_portrait_light_theme.png) | ![Tablet Portrait Dark](screenshots/counter_tablet_portrait_dark_theme.png) |
+| **Tablet Landscape** | ![Tablet Landscape Light](screenshots/counter_tablet_landscape_light_theme.png) | ![Tablet Landscape Dark](screenshots/counter_tablet_landscape_dark_theme.png) |
 
-### Adaptive Landscape (Mobile)
-| Counter | History |
-| :---: | :---: |
-| ![Counter Landscape](screenshots/counter_mobile_landscape_dark_theme.png) | ![History Landscape](screenshots/history_mobile_landscape_dark_theme.png) |
+---
+
+### 📜 History & Logs
+View your activity logs with accurate timestamps and action indicators.
+
+| Orientation | Light Theme | Dark Theme |
+| :--- | :---: | :---: |
+| **Mobile** | ![Mobile Light](screenshots/history_mobile_light_theme.png) | ![Mobile Dark](screenshots/history_mobile_dark_theme.png) |
+| **Mobile Landscape** | ![Mobile Landscape Light](screenshots/history_mobile_landscape_light_theme.png) | ![Mobile Landscape Dark](screenshots/history_mobile_landscape_dark_theme.png) |
+| **Tablet Portrait** | ![Tablet Portrait Light](screenshots/history_tablet_portrait_light_theme.png) | ![Tablet Portrait Dark](screenshots/history_tablet_portrait_dark_theme.png) |
+| **Tablet Landscape** | ![Tablet Landscape Light](screenshots/history_tablet_landscape_light_theme.png) | ![Tablet Landscape Dark](screenshots/history_tablet_landscape_dark_theme.png) |
+
+---
+
+### ⚙️ Settings (Adaptive)
+See how the UI adjusts from a simple list to a professional dual-column layout.
+
+| Orientation | Light Theme | Dark Theme |
+| :--- | :---: | :---: |
+| **Mobile** | ![Mobile Light](screenshots/settings_mobile_light_theme.png) | ![Mobile Dark](screenshots/settings_mobile_dark_theme.png) |
+| **Mobile Landscape** | ![Mobile Landscape Light](screenshots/settings_mobile_landscape_light_theme.png) | ![Mobile Landscape Dark](screenshots/settings_mobile_landscape_dark_theme.png) |
+| **Tablet Portrait** | ![Tablet Portrait Light](screenshots/settings_tablet_portrait_light_theme.png) | ![Tablet Portrait Dark](screenshots/settings_tablet_portrait_dark_theme.png) |
+| **Tablet Landscape** | ![Tablet Landscape Light](screenshots/settings_tablet_landscape_light_theme.png) | ![Tablet Landscape Dark](screenshots/settings_tablet_landscape_dark_theme.png) |
 
 ## 🏗️ Project Structure
 
