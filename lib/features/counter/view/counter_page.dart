@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import '../widgets/counter_display.dart';
+import '../../history/models/history_entry.dart';
 import '../../history/view/history_page.dart';
 import '../../settings/view/settings_page.dart';
 
+/// CounterPage is the main functional area of the app.
+/// It uses a StatefulWidget because it manages the counter value, 
+/// the history list, and the current navigation index.
 class CounterPage extends StatefulWidget {
   const CounterPage({
     super.key,
@@ -18,25 +22,41 @@ class CounterPage extends StatefulWidget {
 }
 
 class _CounterPageState extends State<CounterPage> {
+  // --- APP STATE ---
   int _counter = 0;
   int _stepSize = 1;
-  int _selectedIndex = 0;
-  final List<int> _history = [];
+  int _selectedIndex = 0; // Tracks which tab (Counter, History, Settings) is active.
+  
+  /// Stores the detailed log of counter changes.
+  final List<HistoryEntry> _history = [];
 
+  // --- LOGIC METHODS ---
+  
+  /// Increments the counter and logs the new value to history.
   void _increment() {
     setState(() {
       _counter += _stepSize;
-      _history.add(_counter);
+      _history.add(HistoryEntry(
+        value: _counter,
+        timestamp: DateTime.now(),
+        isIncrement: true,
+      ));
     });
   }
 
+  /// Decrements the counter and logs the new value to history.
   void _decrement() {
     setState(() {
       _counter -= _stepSize;
-      _history.add(_counter);
+      _history.add(HistoryEntry(
+        value: _counter,
+        timestamp: DateTime.now(),
+        isIncrement: false,
+      ));
     });
   }
 
+  /// Resets everything to initial state.
   void _reset() {
     setState(() {
       _counter = 0;
@@ -44,6 +64,7 @@ class _CounterPageState extends State<CounterPage> {
     });
   }
 
+  /// Updates the active tab index.
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -52,6 +73,7 @@ class _CounterPageState extends State<CounterPage> {
 
   @override
   Widget build(BuildContext context) {
+    // LayoutBuilder detects screen width to decide between Mobile and Wide layouts.
     return LayoutBuilder(
       builder: (context, constraints) {
         if (constraints.maxWidth > 600) {
@@ -62,6 +84,7 @@ class _CounterPageState extends State<CounterPage> {
     );
   }
 
+  /// Helper to return the correct widget based on the selected tab.
   Widget _getContent() {
     switch (_selectedIndex) {
       case 0:
@@ -83,6 +106,7 @@ class _CounterPageState extends State<CounterPage> {
     }
   }
 
+  /// The main UI for the counter tab.
   Widget _buildCounterMain() {
     return Center(
       child: SingleChildScrollView(
@@ -103,6 +127,8 @@ class _CounterPageState extends State<CounterPage> {
     );
   }
 
+  /// UI for Small Screens (Phones).
+  /// Uses a Scaffold with a BottomNavigationBar.
   Widget _buildMobileLayout() {
     return Scaffold(
       appBar: AppBar(
@@ -112,11 +138,19 @@ class _CounterPageState extends State<CounterPage> {
                 ? 'History'
                 : 'Settings'),
         actions: [
+          // Only show reset button when on the Counter tab.
           if (_selectedIndex == 0)
             IconButton(
               onPressed: _reset,
               icon: const Icon(Icons.refresh),
               tooltip: 'Reset',
+            ),
+          // Clear history button for the History tab.
+          if (_selectedIndex == 1 && _history.isNotEmpty)
+            IconButton(
+              onPressed: () => setState(() => _history.clear()),
+              icon: const Icon(Icons.delete_sweep),
+              tooltip: 'Clear History',
             ),
         ],
       ),
@@ -150,7 +184,7 @@ class _CounterPageState extends State<CounterPage> {
                 FloatingActionButton(
                   onPressed: _increment,
                   child: const Icon(Icons.add),
-                  heroTag: 'inc',
+                  heroTag: 'inc', // Hero tags must be unique if multiple FABs exist.
                 ),
                 const SizedBox(height: 16),
                 FloatingActionButton.small(
@@ -164,10 +198,13 @@ class _CounterPageState extends State<CounterPage> {
     );
   }
 
+  /// UI for Large Screens (Tablets, Desktop).
+  /// Uses a Row with a NavigationRail on the left.
   Widget _buildWideLayout() {
     return Scaffold(
       body: Row(
         children: [
+          // Vertical navigation menu.
           NavigationRail(
             extended: MediaQuery.of(context).size.width > 900,
             destinations: const [
@@ -191,6 +228,7 @@ class _CounterPageState extends State<CounterPage> {
             onDestinationSelected: _onItemTapped,
           ),
           const VerticalDivider(thickness: 1, width: 1),
+          // Main content area.
           Expanded(
             child: Scaffold(
               appBar: _selectedIndex == 0
@@ -206,6 +244,7 @@ class _CounterPageState extends State<CounterPage> {
                     )
                   : null,
               body: _getContent(),
+              // Horizontal FABs look better on wide screens.
               floatingActionButton: _selectedIndex == 0
                   ? Row(
                       mainAxisAlignment: MainAxisAlignment.end,
