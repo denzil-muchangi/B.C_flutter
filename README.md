@@ -22,6 +22,23 @@ A professional, feature-rich counter application built with Flutter. This projec
   - Extensive code comments and documentation tailored for learning.
   - Clean **Feature-First Architecture** for high maintainability.
 
+## 📸 Visual Showcase
+
+### Mobile Experience
+| Counter (Light) | History (Dark) | Settings (Light) |
+| :---: | :---: | :---: |
+| ![Counter Mobile Light](screenshots/counter_mobile_light_theme.png) | ![History Mobile Dark](screenshots/history_mobile_dark_theme.png) | ![Settings Mobile Light](screenshots/settings_mobile_light_theme.png) |
+
+### Tablet & Wide Screens
+| Counter (Landscape Dark) | Settings (Portrait Light) |
+| :---: | :---: |
+| ![Counter Tablet Landscape Dark](screenshots/counter_tablet_landscape_dark_theme.png) | ![Settings Tablet Portrait Light](screenshots/settings_tablet_portrait_light_theme.png) |
+
+### Adaptive Landscape (Mobile)
+| Counter | History |
+| :---: | :---: |
+| ![Counter Landscape](screenshots/counter_mobile_landscape_dark_theme.png) | ![History Landscape](screenshots/history_mobile_landscape_dark_theme.png) |
+
 ## 🏗️ Project Structure
 
 The project follows a clean, folder-by-feature structure:
